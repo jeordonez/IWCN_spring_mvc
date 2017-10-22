@@ -1,24 +1,22 @@
 package com.master.services;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
-public class producto {
+@Entity
+public class Producto {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private int codigo;
+	
 	private String nombre;
 	private String descripcion;
 	private int precio;
-
-	public producto(int codigo, String nombre, String descripcion, int precio) {
-		this.codigo = codigo;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.precio = precio;
-	}
-	
-	public producto() {
-		
-	}
 
 	public int getCodigo() {
 		return codigo;
